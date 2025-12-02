@@ -1,0 +1,481 @@
+body {
+  font-family: system-ui;
+  background: #f06d06;
+  color: white;
+  text-align: center;
+}/* ===================================================================
+   글로벌 스타일 & 브랜드 시스템
+   - 브랜드 컬러
+      primary: #FF6B81 (따뜻한 핑크 레드)
+      secondary: #7C4DFF (보라)
+      accent: #FFC046 (옐로우 포인트)
+   - 추천 폰트: Pretendard (index.html에서 이미 로드)
+   =================================================================== */
+
+/* 이미지 가이드
+   - 카드 이미지 비율: 4:5 또는 1:1 추천
+   - 권장 사이즈: 최소 600x750px (4:5) 또는 800x800px (1:1)
+   - 선명하게 보이려면 2배 해상도 사용 추천
+     예) 카드에 300x375로 보이면 실제 이미지는 600x750 업로드
+*/
+
+:root {
+  --brand-primary: #ff6b81;
+  --brand-secondary: #7c4dff;
+  --brand-accent: #ffc046;
+  --bg-main: #f7f7fb;
+  --bg-card: #ffffff;
+  --text-main: #222222;
+  --text-sub: #888888;
+  --border-soft: #ececf3;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --shadow-soft: 0 10px 25px rgba(15, 17, 26, 0.06);
+  --shadow-strong: 0 18px 35px rgba(15, 17, 26, 0.18);
+}
+
+/* 기본 리셋 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "맑은 고딕", sans-serif;
+  background: radial-gradient(circle at top, #ffeef2 0, #f7f7fb 42%, #f2f3ff 100%);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 앱 컨테이너 (모바일 화면처럼) */
+.app {
+  min-height: 100vh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), #f7f7fb);
+  position: relative;
+  padding-bottom: 72px; /* 하단 네비 영역 확보 */
+}
+
+/* 상단 헤더 */
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(14px);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.96),
+    rgba(255, 250, 252, 0.96)
+  );
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-mark {
+  font-size: 26px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+}
+
+.logo-sub {
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-btn {
+  border: none;
+  background: #ffffff;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 메인 영역 */
+.app-main {
+  padding: 10px 16px 24px;
+}
+
+/* 섹션 공통 */
+.section-block {
+  margin-top: 22px;
+}
+
+.section-header {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.section-header h2 {
+  font-size: 16px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.section-more-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+  font-size: 12px;
+  color: var(--brand-secondary);
+  cursor: pointer;
+}
+
+/* =========================================
+   오늘의 추천 테스트 (하이라이트 카드)
+   ========================================= */
+.highlight-section {
+  margin-top: 14px;
+}
+
+.highlight-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 192, 203, 0.9),
+      transparent 60%
+    ),
+    radial-gradient(circle at bottom right, #7c4dff, #4f2bd8);
+  padding: 18px 16px 16px;
+  box-shadow: var(--shadow-strong);
+  color: #ffffff;
+}
+
+.highlight-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(6px);
+  margin-bottom: 8px;
+}
+
+.highlight-pill span:first-child {
+  font-size: 13px;
+}
+
+.highlight-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.highlight-subtitle {
+  font-size: 12px;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.highlight-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.highlight-meta {
+  font-size: 11px;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.highlight-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.highlight-cta-btn {
+  padding: 9px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #ffffff;
+  color: var(--brand-primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.highlight-cta-btn span:last-child {
+  font-size: 14px;
+}
+
+/* =========================================
+   태그 스크롤
+   ========================================= */
+.tags-scroll-container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px 4px 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tags-scroll-container::-webkit-scrollbar {
+  height: 0;
+}
+
+.tag-chip {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 7px 14px;
+  background: #ffffff;
+  border: 1px solid var(--border-soft);
+  font-size: 12px;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.tag-chip span {
+  font-size: 13px;
+}
+
+/* =========================================
+   테스트 카드 그리드
+   ========================================= */
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.test-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.test-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* 카드 상단 배지 영역 */
+.card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  border: none;
+}
+
+.badge-mbti {
+  background: rgba(124, 77, 255, 0.08);
+  color: #5f3cff;
+}
+
+.badge-hot {
+  background: rgba(255, 107, 129, 0.12);
+  color: #ff3b57;
+}
+
+.badge-new {
+  background: #111111;
+  color: #ffffff;
+}
+
+/* 북마크 아이콘 느낌 */
+.card-bookmark {
+  font-size: 15px;
+  color: #d3d3de;
+}
+
+/* 이미지 래퍼 */
+.card-image-wrap {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: linear-gradient(135deg, #ffe1e8, #fdf2ff);
+  position: relative;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 4 / 5; /* 인스타 카드 같은 비율 */
+  object-fit: cover;
+  display: block;
+  image-rendering: auto;
+  transition: transform 0.25s ease-out;
+}
+
+.test-card:hover .card-image {
+  transform: scale(1.04);
+}
+
+/* 이미지 위에 페이드 그라데이션 (살짝) */
+.card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.04),
+    rgba(0, 0, 0, 0.16)
+  );
+  pointer-events: none;
+}
+
+/* 카드 텍스트 영역 */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.card-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--text-sub);
+}
+
+.card-meta-left {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.card-meta-left span {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.card-meta-right {
+  font-size: 11px;
+}
+
+/* =========================================
+   하단 네비게이션
+   ========================================= */
+.bottom-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(210, 210, 230, 0.7);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 20;
+}
+
+.nav-item {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: #9999aa;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
+.nav-item.active {
+  color: var(--brand-primary);
+  font-weight: 600;
+}
+
+/* =========================================
+   반응형 (조금 넓은 화면)
+   ========================================= */
+@media (min-width: 480px) {
+  .app-main {
+    padding: 16px 20px 24px;
+  }
+
+  .test-grid {
+    gap: 14px;
+  }
+}
