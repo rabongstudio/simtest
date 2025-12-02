@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+  <title>MySimTest - 오늘의 심리 테스트</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- 웹폰트: Pretendard / Noto Sans KR 계열 느낌 -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+  />
+</head>
+<body>
+  <div class="app">
+    <!-- 상단 헤더 -->
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-mark">🧠</span>
+        <div class="logo-text">
+          <span class="logo-title">MySimTest</span>
+          <span class="logo-sub">오늘 기분, 테스트로 보는 날</span>
+        </div>
+      </div>
+
+      <div class="header-icons">
+        <button id="search-btn" class="icon-btn" aria-label="검색">
+          🔍
+        </button>
+        <button id="mypage-btn" class="icon-btn" aria-label="마이페이지">
+          👤
+        </button>
+      </div>
+    </header>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="app-main">
+      <!-- 오늘의 추천 테스트 영역 -->
+      <section id="highlight-carousel" class="highlight-section">
+        <!-- JS에서 채워짐 -->
+      </section>
+
+      <!-- 태그 / 카테고리 -->
+      <section id="category-tags" class="section-block">
+        <div class="section-header">
+          <h2>인기 태그</h2>
+        </div>
+        <div class="tags-scroll-container">
+          <!-- JS에서 채워짐 -->
+        </div>
+      </section>
+
+      <!-- 트렌딩 테스트 -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2>🔥 지금 유행하는 테스트</h2>
+          <button class="section-more-btn">전체보기</button>
+        </div>
+        <div id="trending-list" class="test-grid">
+          <!-- JS에서 채워짐 -->
+        </div>
+      </section>
+
+      <!-- 신규 테스트 -->
+      <section class="section-block">
+        <div class="section-header">
+          <h2>🗓️ 새로 올라온 심테공방</h2>
+          <button class="section-more-btn">더보기</button>
+        </div>
+        <div id="new-list" class="test-grid">
+          <!-- JS에서 채워짐 -->
+        </div>
+      </section>
+    </main>
+
+    <!-- 하단 네비게이션 -->
+    <nav class="bottom-nav">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">홈</span>
+      </a>
+      <a href="list.html" class="nav-item">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">목록</span>
+      </a>
+      <a href="create.html" class="nav-item">
+        <span class="nav-icon">✍️</span>
+        <span class="nav-label">공방</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">설정</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
