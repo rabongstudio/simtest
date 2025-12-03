@@ -464,5 +464,4 @@ async function renderHomePage() {
 }
 
 // 페이지 로드 시 초기화
-document.addEventListener("DOMContentLoaded", re
-::contentReference[oaicite:0]{index=0}
+document.addEventListener("DOMContentLoaded", renderHomePage);
