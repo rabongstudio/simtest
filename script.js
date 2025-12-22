@@ -160,7 +160,7 @@ function renderHighlightFromBanner(banner) {
   const imageUrl = test.imageUrl || test.thumbnail_url || test.image;
 
   highlightSection.innerHTML = `
-    <div class="highlight-card" onclick="location.href='play.html?id=${test.id}'">
+    <div class="highlight-card" onclick="location.href='detail.html?id=${test.id}'">
       <div class="highlight-pill">
         <span>✨</span>
         <span>${pillText}</span>
