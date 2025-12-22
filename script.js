@@ -99,7 +99,7 @@ function createTestCard(test) {
   const imageUrl = test.imageUrl || test.thumbnail_url || test.image;
 
   return `
-    <div class="test-card" onclick="location.href='play.html?id=${test.id}'">
+    <div class="test-card" onclick="location.href='detail.html?id=${test.id}'">
       <div class="card-top-row">
         <div class="card-badges">
           ${
