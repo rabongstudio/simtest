@@ -173,13 +173,13 @@ async function fetchRelatedTests(mainTag, excludeId) {
 function getDummyDetail(id) {
   return {
     id,
-    title: "붕어빵으로 알아보는 성격",
+    title: "",
     description:
-      "붕어빵 속을 고르면 당신의 성격 유형을 알 수 있어요!",
-    thumbnail_url: "img/test3.jpg",
-    play_count: 8000,
-    main_tag: "음식심리",
-    tags: ["음식심리"],
+      "",
+    thumbnail_url: " ",
+    play_count: 0,
+    main_tag: "",
+    tags: "",
   };
 }
 
