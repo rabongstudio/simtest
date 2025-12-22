@@ -26,9 +26,7 @@ function formatPlays(num) {
 }
 
 // Supabase 준비 여부
-const hasSupabase =
-  typeof window !== "undefined" &&
-  typeof window.supabaseClient !== "undefined";
+const hasSupabase = window.hasSupabase;
 
 // ---------------------------------------------------------
 // (1) 화면 렌더링
