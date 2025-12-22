@@ -1,112 +1,125 @@
-/* detail.css */
-
-/* 공통 reset은 style.css에서 이미 처리됨 */
+/* ==================================================
+   detail.css
+   - index(style.css) 기준 스케일 유지
+   - detail 전용 요소만 정의
+   ================================================== */
 
 /* detail 컨테이너 */
 .detail-container {
   width: 100%;
-  padding-bottom: 72px; /* 하단 네비 고려 */
+  padding-bottom: 24px; /* app-main 안이므로 72px 필요 없음 */
 }
 
 /* 썸네일 */
 .img-container {
   width: 100%;
   aspect-ratio: 1 / 1;
-  background-color: #eee;
+  background: #f2f4f6;
+  border-radius: var(--radius-lg);
   overflow: hidden;
+  margin-bottom: 16px;
 }
 
 #detail-thumbnail {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 /* 타이틀 */
 .title-section {
-  padding: 24px 20px 12px;
+  padding: 0 4px 12px; /* index 카드 텍스트 느낌 */
   text-align: center;
 }
 
 #detail-title {
-  font-size: 20px;   /* 🔴 24 → 20 (index 스케일 맞춤) */
+  font-size: 18px; /* index highlight-title보다 살짝 작게 */
   font-weight: 700;
-  margin-bottom: 10px;
-  line-height: 1.4;
+  margin-bottom: 6px;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
 }
 
 .detail-meta {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-sub);
 }
 
 /* 설명 */
 .detail-desc {
-  padding: 0 16px;
+  margin-top: 14px;
 }
 
 .desc-inner {
-  background: #f9fafb;
-  padding: 16px;
-  border-radius: 14px;
+  background: var(--bg-card);
+  padding: 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
 }
 
 #detail-description {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.6;
-  color: #4e5968;
+  color: var(--text-main);
 }
 
 /* 태그 */
 .detail-tags {
   display: flex;
   justify-content: center;
-  gap: 8px;
-  padding: 16px;
+  gap: 6px;
+  margin-top: 14px;
   flex-wrap: wrap;
 }
 
 /* 시작 버튼 */
 .detail-actions {
-  padding: 8px 16px 24px;
+  margin-top: 18px;
 }
 
 #btn-start-test {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   border-radius: 16px;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   background: var(--brand-primary);
   color: #fff;
   border: none;
+  box-shadow: 0 10px 20px rgba(255, 107, 129, 0.25);
 }
 
 /* 피드백 */
 .detail-feedback {
-  padding: 16px;
+  margin-top: 20px;
 }
 
 .feedback-grid {
   display: flex;
   gap: 8px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .feedback-btn {
   flex: 1;
-  padding: 14px;
-  font-size: 13px;
+  padding: 12px;
+  font-size: 12px;
   border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  background: #fff;
+  color: var(--text-main);
 }
 
 /* 추천 */
 .detail-related {
-  padding: 32px 16px;
+  margin-top: 28px;
+  padding-top: 20px;
   border-top: 8px solid #f2f4f6;
 }
 
 .detail-related h2 {
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 15px;
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
 }
