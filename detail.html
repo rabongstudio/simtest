@@ -1,68 +1,88 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>심리테스트 상세</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
 <body>
-  <div class="app-wrapper">
-    <main class="detail-container">
+  <div class="app">
 
-      <section class="detail-header">
+    <!-- 상단 헤더 (index와 동일 or 간소화 버전) -->
+    <header class="app-header">
+      <button class="icon-btn" onclick="history.back()">←</button>
+      <span class="logo-title">MySimTest</span>
+      <span></span>
+    </header>
+
+    <!-- 메인 영역 -->
+    <main class="app-main">
+      <div class="detail-container">
+
+        <!-- 썸네일 -->
         <div class="img-container">
-          <img id="detail-thumbnail" src="" alt="테스트 이미지" />
+          <img id="detail-thumbnail" alt="테스트 이미지" />
         </div>
-        <div class="title-section">
-          <h1 id="detail-title">테스트 제목</h1>
+
+        <!-- 타이틀 -->
+        <section class="title-section">
+          <h1 id="detail-title"></h1>
           <div class="detail-meta">
             <span id="detail-provider">심테공방</span> ·
             <span id="detail-plays">0명 참여</span>
-            <span id="detail-duration"> · 약 2분</span>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="detail-desc">
-        <div class="desc-inner">
-          <p id="detail-description">테스트 설명이 여기에 들어갑니다.</p>
-        </div>
-      </section>
+        <!-- 설명 -->
+        <section class="detail-desc">
+          <div class="desc-inner">
+            <p id="detail-description"></p>
+          </div>
+        </section>
 
-      <section class="detail-tags" id="detail-tags"></section>
+        <!-- 태그 -->
+        <section id="detail-tags" class="detail-tags"></section>
 
-      <section class="detail-actions">
-        <button id="btn-start-test">테스트 시작</button>
-      </section>
+        <!-- 시작 버튼 -->
+        <section class="detail-actions">
+          <button id="btn-start-test">테스트 시작</button>
+        </section>
 
-      <section class="detail-feedback">
-        <div class="feedback-grid">
-          <button class="feedback-btn" data-feedback="funny">
-            👍 재밌어요 (<span id="feedback-funny">0</span>)
-          </button>
-          <button class="feedback-btn" data-feedback="accurate">
-            ❤️ 정확해요 (<span id="feedback-accurate">0</span>)
-          </button>
-        </div>
-        <button id="btn-share" class="share-btn">🔗 친구에게 공유하기</button>
-      </section>
+        <!-- 피드백 -->
+        <section class="detail-feedback">
+          <div class="feedback-grid">
+            <button class="feedback-btn">👍 재밌어요</button>
+            <button class="feedback-btn">❤️ 정확해요</button>
+          </div>
+          <button class="feedback-btn">🔗 공유하기</button>
+        </section>
 
-      <section class="detail-related">
-        <h2>이 테스트와 비슷한 테스트</h2>
-        <div id="related-tests" class="card-grid"></div>
-      </section>
+        <!-- 비슷한 테스트 -->
+        <section class="detail-related">
+          <h2>이 테스트와 비슷한 테스트</h2>
+          <div id="related-tests" class="test-grid"></div>
+        </section>
 
-      <footer class="detail-footer">
-        <a href="/" target="_blank">심테 다운로드</a>
-      </footer>
-
+      </div>
     </main>
+
+    <!-- 하단 네비 (index와 동일) -->
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">홈</span>
+      </a>
+      <a href="list.html" class="nav-item">
+        <span class="nav-icon">📋</span>
+        <span class="nav-label">목록</span>
+      </a>
+      <a href="create.html" class="nav-item">
+        <span class="nav-icon">✍️</span>
+        <span class="nav-label">공방</span>
+      </a>
+      <a href="mypage.html" class="nav-item">
+        <span class="nav-icon">⚙️</span>
+        <span class="nav-label">설정</span>
+      </a>
+    </nav>
+
   </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="config.js"></script>
-<script src="detail.js"></script>
+  <!-- 스크립트 순서 중요 -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="detail.js"></script>
 </body>
-</html>
