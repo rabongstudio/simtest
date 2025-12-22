@@ -1,31 +1,32 @@
-:root {
-  --pm-red: #ff5a5f;      /* 포인트 컬러 */
-  --pm-bg: #f2f4f6;       /* 연한 회색 배경 */
-  --pm-text-main: #1a1c1d;
-  --pm-text-sub: #8b95a1;
-}
+/* 기본 초기화 */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #f2f4f6; }
 
 body {
-  font-family: 'Pretendard', sans-serif;
-  background-color: var(--pm-bg);
-  margin: 0;
+  font-family: 'Pretendard', -apple-system, sans-serif;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* PC에서 중앙 정렬 */
+}
+
+/* PC에서 봤을 때 모바일 기기처럼 보이게 제한 */
+.app-wrapper {
+  width: 100%;
+  max-width: 480px; /* 일반적인 모바일 가로폭 */
+  min-height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
 .detail-container {
   width: 100%;
-  max-width: 500px; /* 모바일 뷰 최적화 */
-  background: #ffffff;
-  min-height: 100vh;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
+  padding-bottom: 50px;
 }
 
-/* 썸네일 이미지 강조 */
-.thumbnail-box {
+/* 썸네일: 푸망처럼 1:1 혹은 상단 고정 */
+.img-container {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  background: #eee;
+  aspect-ratio: 1 / 1;
+  background-color: #eee;
   overflow: hidden;
 }
 
@@ -35,9 +36,9 @@ body {
   object-fit: cover;
 }
 
-/* 제목 영역 */
-.title-box {
-  padding: 30px 20px 10px;
+/* 타이틀 섹션 */
+.title-section {
+  padding: 32px 20px 16px;
   text-align: center;
 }
 
@@ -45,21 +46,21 @@ body {
   font-size: 24px;
   font-weight: 800;
   margin: 0 0 12px 0;
-  color: var(--pm-text-main);
+  line-height: 1.4;
   word-break: keep-all;
 }
 
 .detail-meta {
   font-size: 14px;
-  color: var(--pm-text-sub);
+  color: #8b95a1;
 }
 
-/* 설명 섹션 */
+/* 설명창: 카드형 */
 .detail-desc {
-  padding: 10px 20px;
+  padding: 0 20px;
 }
 
-.desc-content {
+.desc-inner {
   background-color: #f9fafb;
   padding: 20px;
   border-radius: 16px;
@@ -68,7 +69,7 @@ body {
 
 #detail-description {
   margin: 0;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.6;
   color: #4e5968;
 }
@@ -77,40 +78,36 @@ body {
 .detail-tags {
   display: flex;
   justify-content: center;
-  gap: 6px;
+  gap: 8px;
   flex-wrap: wrap;
-  padding: 10px 20px;
+  padding: 20px;
 }
 
-/* 시작 버튼 - 푸망 핵심 UI */
+/* 시작 버튼: 강조 */
 .detail-actions {
-  padding: 20px;
+  padding: 10px 20px 30px;
 }
 
 #btn-start-test {
   width: 100%;
-  padding: 18px;
-  background-color: var(--pm-red);
-  color: white;
+  padding: 20px;
+  background-color: #ff5a5f;
+  color: #fff;
   border: none;
-  border-radius: 16px;
+  border-radius: 18px;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 8px 16px rgba(255, 90, 95, 0.25);
-  transition: transform 0.1s;
+  box-shadow: 0 8px 16px rgba(255, 90, 95, 0.2);
 }
 
-#btn-start-test:active {
-  transform: scale(0.97);
-}
-
-/* 피드백 버튼 */
+/* 피드백 버튼 그룹 */
 .detail-feedback {
-  padding: 10px 20px 40px;
+  padding: 20px;
+  background-color: #fff;
 }
 
-.feedback-row {
+.feedback-grid {
   display: flex;
   gap: 10px;
   margin-bottom: 12px;
@@ -118,39 +115,34 @@ body {
 
 .feedback-btn {
   flex: 1;
-  padding: 14px;
+  padding: 15px;
   background: #fff;
   border: 1px solid #e5e8eb;
-  border-radius: 12px;
+  border-radius: 14px;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
 }
 
-#btn-share {
+.share-btn {
   width: 100%;
-  padding: 14px;
+  padding: 15px;
   background: #f2f4f6;
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
   font-weight: 600;
   color: #4e5968;
   cursor: pointer;
 }
 
-/* 추천 섹션 */
+/* 추천 리스트 */
 .detail-related {
-  padding: 30px 20px;
+  padding: 40px 20px;
   border-top: 8px solid #f2f4f6;
 }
 
 .detail-related h2 {
   font-size: 18px;
-  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -161,12 +153,12 @@ body {
 }
 
 .detail-footer {
-  padding: 40px 20px;
   text-align: center;
+  padding: 40px 0;
 }
 
 .detail-footer a {
-  color: var(--pm-text-sub);
+  color: #adb5bd;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
 }
