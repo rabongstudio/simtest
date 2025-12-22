@@ -25,3 +25,16 @@ if (typeof supabase === "undefined") {
     window.SUPABASE_ANON_KEY
   );
 }
+
+// ✅ Supabase Client 생성
+if (typeof window.supabase !== "undefined") {
+  window.supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+  window.hasSupabase = true;
+  console.log("[config.js] Supabase 연결 완료");
+} else {
+  window.supabaseClient = null;
+  window.hasSupabase = false;
+}
