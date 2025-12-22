@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>심리테스트 상세</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="detail-container">
+
+    <!-- 썸네일 / 제목 -->
+    <section class="detail-header">
+      <img
+        id="detail-thumbnail"
+        src=""
+        alt="테스트 이미지"
+      />
+      <h1 id="detail-title">테스트 제목</h1>
+      <div class="detail-meta">
+        <span id="detail-provider">심테공방</span> ·
+        <span id="detail-plays">0명 참여</span>
+        <span id="detail-duration"> · 약 2분</span>
+      </div>
+    </section>
+
+    <!-- 소개 텍스트 -->
+    <section class="detail-desc">
+      <p id="detail-description">테스트 설명이 여기에 들어갑니다.</p>
+    </section>
+
+    <!-- 해시태그 -->
+    <section class="detail-tags" id="detail-tags"></section>
+
+    <!-- 버튼 -->
+    <section class="detail-actions">
+      <button id="btn-start-test">테스트 시작</button>
+    </section>
+
+    <!-- 반응(재밌어요/정확해요) -->
+    <section class="detail-feedback">
+      <button class="feedback-btn" data-feedback="funny">
+        👍 재밌어요 (<span id="feedback-funny">0</span>)
+      </button>
+      <button class="feedback-btn" data-feedback="accurate">
+        ❤️ 정확해요 (<span id="feedback-accurate">0</span>)
+      </button>
+      <button id="btn-share">🔗 공유하기</button>
+    </section>
+
+    <!-- 비슷한 테스트 추천 -->
+    <section class="detail-related">
+      <h2>이 테스트와 비슷한 테스트</h2>
+      <div id="related-tests" class="card-grid"></div>
+    </section>
+
+    <footer class="detail-footer">
+      <a href="https://app.poomang.com" target="_blank">푸망앱 다운로드</a>
+    </footer>
+
+  </main>
+
+  <script src="config.js"></script>
+  <script src="detail.js"></script>
+</body>
+</html>
