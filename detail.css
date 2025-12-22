@@ -1,28 +1,14 @@
-/* 기본 초기화 */
-* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #f2f4f6; }
+/* detail.css */
 
-body {
-  font-family: 'Pretendard', -apple-system, sans-serif;
-  display: flex;
-  justify-content: center; /* PC에서 중앙 정렬 */
-}
+/* 공통 reset은 style.css에서 이미 처리됨 */
 
-/* PC에서 봤을 때 모바일 기기처럼 보이게 제한 */
-.app-wrapper {
-  width: 100%;
-  max-width: 480px; /* 일반적인 모바일 가로폭 */
-  min-height: 100vh;
-  background-color: #fff;
-  box-shadow: 0 0 20px rgba(0,0,0,0.05);
-}
-
+/* detail 컨테이너 */
 .detail-container {
   width: 100%;
-  padding-bottom: 50px;
+  padding-bottom: 72px; /* 하단 네비 고려 */
 }
 
-/* 썸네일: 푸망처럼 1:1 혹은 상단 고정 */
+/* 썸네일 */
 .img-container {
   width: 100%;
   aspect-ratio: 1 / 1;
@@ -36,40 +22,37 @@ body {
   object-fit: cover;
 }
 
-/* 타이틀 섹션 */
+/* 타이틀 */
 .title-section {
-  padding: 32px 20px 16px;
+  padding: 24px 20px 12px;
   text-align: center;
 }
 
 #detail-title {
-  font-size: 24px;
-  font-weight: 800;
-  margin: 0 0 12px 0;
+  font-size: 20px;   /* 🔴 24 → 20 (index 스케일 맞춤) */
+  font-weight: 700;
+  margin-bottom: 10px;
   line-height: 1.4;
-  word-break: keep-all;
 }
 
 .detail-meta {
-  font-size: 14px;
-  color: #8b95a1;
+  font-size: 12px;
+  color: var(--text-sub);
 }
 
-/* 설명창: 카드형 */
+/* 설명 */
 .detail-desc {
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 .desc-inner {
-  background-color: #f9fafb;
-  padding: 20px;
-  border-radius: 16px;
-  text-align: center;
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 14px;
 }
 
 #detail-description {
-  margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   color: #4e5968;
 }
@@ -79,86 +62,51 @@ body {
   display: flex;
   justify-content: center;
   gap: 8px;
+  padding: 16px;
   flex-wrap: wrap;
-  padding: 20px;
 }
 
-/* 시작 버튼: 강조 */
+/* 시작 버튼 */
 .detail-actions {
-  padding: 10px 20px 30px;
+  padding: 8px 16px 24px;
 }
 
 #btn-start-test {
   width: 100%;
-  padding: 20px;
-  background-color: #ff5a5f;
+  padding: 16px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--brand-primary);
   color: #fff;
   border: none;
-  border-radius: 18px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 8px 16px rgba(255, 90, 95, 0.2);
 }
 
-/* 피드백 버튼 그룹 */
+/* 피드백 */
 .detail-feedback {
-  padding: 20px;
-  background-color: #fff;
+  padding: 16px;
 }
 
 .feedback-grid {
   display: flex;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .feedback-btn {
   flex: 1;
-  padding: 15px;
-  background: #fff;
-  border: 1px solid #e5e8eb;
-  border-radius: 14px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+  padding: 14px;
+  font-size: 13px;
+  border-radius: 12px;
 }
 
-.share-btn {
-  width: 100%;
-  padding: 15px;
-  background: #f2f4f6;
-  border: none;
-  border-radius: 14px;
-  font-weight: 600;
-  color: #4e5968;
-  cursor: pointer;
-}
-
-/* 추천 리스트 */
+/* 추천 */
 .detail-related {
-  padding: 40px 20px;
+  padding: 32px 16px;
   border-top: 8px solid #f2f4f6;
 }
 
 .detail-related h2 {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.detail-footer {
-  text-align: center;
-  padding: 40px 0;
-}
-
-.detail-footer a {
-  color: #adb5bd;
-  text-decoration: none;
-  font-size: 14px;
+  font-size: 16px;
+  margin-bottom: 16px;
 }
