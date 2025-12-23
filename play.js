@@ -81,6 +81,13 @@ let totalScore = 0;
 /* ===============================
    3. 화면 제어
 ================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.getElementById("btn-start");
+  if (startBtn) {
+    startBtn.addEventListener("click", startTest);
+  }
+});
+
 function startTest() {
   document.getElementById("start-screen").classList.remove("active");
   document.getElementById("question-screen").classList.add("active");
