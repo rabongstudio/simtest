@@ -43,6 +43,8 @@ function renderDetail(test) {
   document.getElementById("detail-plays").textContent =
     `${formatPlays(test.play_count || test.plays)}명 참여`;
 
+  document.getElementById("detail-thumbnail").style.display = "block";
+
   // 태그
   renderTags(test.tags || (test.main_tag ? [test.main_tag] : []));
 
