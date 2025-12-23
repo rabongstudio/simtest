@@ -51,7 +51,9 @@ function renderDetail(test) {
   // 시작 버튼
   const startBtn = document.getElementById("btn-start-test");
   startBtn.onclick = () => {
-    location.href = `play.html?id=${test.id}`;
+    // DB에 경로 정보가 없으면 기본값으로 play.html 사용
+    const targetPage = test.play_page_url || 'play.html';
+    location.href = `${targetPage}`;
   };
 }
 
