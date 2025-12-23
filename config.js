@@ -4,8 +4,8 @@
 // =======================================
 
 // 🔹 여기 두 개만 실제 값으로 교체하면 됨
-window.SUPABASE_URL = 'https://agjdbxfcswyyudubkzid.supabase.co';      // 프로젝트 URL
-window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFnamRieGZjc3d5eXVkdWJremlkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3MjkzOTAsImV4cCI6MjA4MDMwNTM5MH0.ef-g2CFemIk-Q3ppVQgDOTc8rmV9k2XF16bf2ujj6-w'; // anon key
+window.SUPABASE_URL = 'https://dmxkznmliiyffoltdcxd.supabase.co';      // 프로젝트 URL
+window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRteGt6bm1saWl5ZmZvbHRkY3hkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDMwNTc2NzksImV4cCI6MjA1ODYzMzY3OX0.NUQgOp8NGHEZ0RDQ4sbuH7YCJpfYqF3UyEK3sPtu5-o'; // anon key
 
 // 홈/테스트 관련 테이블 이름 (원하는 대로 변경 가능)
 window.TABLE_TESTS = "tests";
